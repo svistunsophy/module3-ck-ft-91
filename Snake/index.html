@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div id="game-board"></div>
+    <div class="controls"></div>
+    <div class="joystick">
+      <button class="row-up" data-direction="up">⬆</button>
+      <button class="row-down" data-direction="down">⬇</button>
+      <button class="row-left" data-direction="left">⬅</button>
+      <button class="row-right" data-direction="right">➡</button>
+    </div>
+    <div id="scoreboard">Очки: 0</div>
+    <p></p>
+    <input type="number" id="speed-input" value="800" step="100" min="100" max="2000">
+    <label for="speed-input">Скорость (мс)</label>
+  </body>
+</html>
+
