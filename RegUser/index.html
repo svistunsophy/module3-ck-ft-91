@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Регестрация пользователя</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="index.js" defer></script>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      Имя пользователя:
+      <input type="text" v-model="user.firstName" /><br /><br />
+      Фамилия пользователя:
+      <input type="text" v-model="user.lastName" /><br /><br />
+
+      Пол:<br />
+      <label for="male">Мужской</label>
+      <input
+        type="radio"
+        name="gender"
+        value="Male"
+        v-model="user.gender"
+        id="male"
+      /><br />
+      <label for="female">Женский</label>
+      <input
+        type="radio"
+        name="gender"
+        value="Female"
+        v-model="user.gender"
+        id="female"
+      /><br /><br />
+
+      Пароль:
+      <input
+        :type="showPassword ? 'text' : 'password'"
+        v-model="user.password"
+      /><br /><br />
+      Подтверждение пароля:
+      <input
+        :type="showPassword ? 'text' : 'password'"
+        v-model="user.confirmPassword"
+      /><br /><br />
+
+      <button
+        @mousedown.prevent="toggleShow(true)"
+        @mouseup.prevent="toggleShow(false)"
+        @mouseleave.prevent="toggleShow(false)"
+      >
+        Показать пароль</button
+      ><br /><br />
+
+      <button :disabled="!isValidForm" @click="registerUser">
+        Зарегистрироваться</button
+      ><br /><br />
+
+      Пользователь: {{ user.firstName }} {{ user.lastName }}. {{ user.gender ===
+      'Male' ? 'Мужского' : 'Женского' }} пола.<br />
+    </div>
+  </body>
+</html>
